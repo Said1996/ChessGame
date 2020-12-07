@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chess"
         mc:Ignorable="d"
+        
         Title="MainWindow" Height="800" Width="800">
-    <Grid>
+    <Grid MouseDown="RevertChanges">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
@@ -19,8 +20,10 @@
             <RowDefinition Height="600" MinHeight="50" MaxHeight="800"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Grid AllowDrop="True" Grid.Row="1" Grid.Column="2">
+        <Grid x:Name="ChessBoard" AllowDrop="True" Grid.Row="1" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+            
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -31,6 +34,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -44,10 +48,204 @@
             <Grid.Background>
                 <ImageBrush ImageSource="../Resources/ChessBoard.png"/>
             </Grid.Background>
-            <Image Source="../Resources/pawn.png"  Stretch="Fill" Grid.Column="1" Grid.Row="1"/>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackRook1" Grid.Column="1" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackRook.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackKnight1" Grid.Column="2" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackKnight.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackBishop1" Grid.Column="3" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackBishop.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackKing" Grid.Column="4" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackKIng.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackQueen" Grid.Column="5" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackQueen.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackBishop2" Grid.Column="6" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackBishop.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackKnight2" Grid.Column="7" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackKnight.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackRook2" Grid.Column="8" Grid.Row="8" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackRook.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn1" Grid.Column="1" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn2" Grid.Column="2" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn3" Grid.Column="3" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn4" Grid.Column="4" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn5" Grid.Column="5" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn6" Grid.Column="6" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn7" Grid.Column="7" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="BlackPawn8" Grid.Column="8" Grid.Row="7" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/BlackPawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn1" Grid.Column="1" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn2" Grid.Column="2" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn3" Grid.Column="3" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn4" Grid.Column="4" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn5" Grid.Column="5" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn6" Grid.Column="6" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn7" Grid.Column="7" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhitePawn8" Grid.Column="8" Grid.Row="2" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhitePawn.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteRook1" Grid.Column="1" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteRook.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteKnight1" Grid.Column="2" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteKnight.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteBishop1" Grid.Column="3" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteBishop.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteKing" Grid.Column="4" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteKing.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteQueen" Grid.Column="5" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteQueen.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteBishop2" Grid.Column="6" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteBishop.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteKnight2" Grid.Column="7" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteKnight.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="WhiteRook2" Grid.Column="8" Grid.Row="1" Click="AvailableMoves">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/WhiteRook.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
             
 
-
+            
+            
+            
         </Grid>
+        <Label x:Name="aLabel" Content="No" FontSize="30" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>

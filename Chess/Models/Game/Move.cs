@@ -2,92 +2,51 @@
 using System.Collections.Generic;
 using System.Text;
 using Chess.Models.Pieces;
+using Chess;
+using System.Linq;
 
 namespace Chess.Models.Game
 {
     class Move
     {
-        public static Board X = new Board();
-        public static void MovePiece(int[] piece, int[] target)
+        public static string Turn = "White";
+        static List<Piece> allPieces = Board.board.allPiecesObjects;
+        
+        public static List<int[]> Select(int[]from)
         {
-            if (IsPieceExist(piece)
+            var obj = allPieces.Find(x => x.Position.SequenceEqual(from));
+            if (Turn == obj.Side)
             {
-                if IsValidMove(piece, target)
-                {
-
-
-                } 
-                else 
-                {
-                    
-                }
-
+                return obj.AvailableMoves();
             }
-            else { }
-
+            else
+            {
+                return new List<int[]>();
+            }
+            
         }
+        
 
-        bool IsPieceExist(int[] piece)
+
+        static public void DoMove(int[] moveFrom, int[] moveTo)
         {
-            bool isPieceExist = X.allPieces.Contains(piece);
-            return isPieceExist;
-        }
+            
 
+            allPieces.RemoveAll(x => x.Position.SequenceEqual(moveTo));
+            var piece = allPieces.Find(x => x.Position.SequenceEqual(moveFrom));
+            piece.IsfirstMove = false;
+            piece.Position = moveTo;
 
-        public static List<int[]> GetPrimaryMoves(int[] piece)
-        {
-            switch (piece[2])
+            if(Turn == "Black")
             {
-                case 0:
-                    return King.PrimaryMoves(piece);
-                case 1:
-                    return Pawn.PrimaryMoves(piece);
-                case 2:
-                    return Bishop.PrimaryMoves(piece);
-                case 3:
-                    return Knight.PrimaryMoves(piece);
-                case 4:
-                    return Rook.PrimaryMoves(piece);
-                case 5:
-                    return Queen.PrimaryMoves(piece);
+                Turn = "White";
             }
-        List<int[]> GetAvailableMoves(int[] piece)
+            else
             {
-                switch (piece[2])
-                {
-                    case 0:
-                        return King.AvailableMoves(piece);
-                    case 1:
-                        return Pawn.AvailableMoves(piece);
-                    case 2:
-                        return Bishop.AvailableMoves(piece);
-                    case 3:
-                        return Knight.AvailableMoves(piece);
-                    case 4:
-                        return Rook.AvailableMoves(piece);
-                    case 5:
-                        return Queen.AvailableMoves(piece);
-                }
-
-                bool IsValidMove(int[] piece, int[] target)
-                {
-                    List<int[]> x = GetAvailableMoves(piece);
-                    return x.Contains(target);
-                }
+                Turn = "Black";
             }
 
-
-
-
-
-
-
-
-            void Main()
-            {
-                bool z = IsPieceExist(new int[] { 2, 3, 4, 5 });
-                Console.WriteLine(z);
-            }
+            Data.GettingData();
         }
     }
 }  

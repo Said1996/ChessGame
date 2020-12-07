@@ -1,35 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Chess.Models.Pieces
 {
-    static class Rook
+    class Rook : Piece
     {
-
-
-        static List<List<int[]>> NaturalMoves(int[] position)
+        public Rook(int x, int y, string side) : base(x, y, side)
         {
-            List<List<int[]>> naturalMoves = new List<List<int[]>>();
 
-            List<int[]> verticalMovement = new List<int[]>();
-            List<int[]> horizontalMovement = new List<int[]>();
-            
-            for (int i = 1; i < 9; i++)
-            {
-                verticalMovement.Add(new int[] { position[0], i });
-                horizontalMovement.Add(new int[] { i, position[1] });
-            }
-            naturalMoves.Add(verticalMovement);
-            naturalMoves.Add(horizontalMovement);
-
-            return naturalMoves;
         }
+        public override List<int[]> Matrix(bool IsfirstMove)
+        {
+            List<int[]> matrix = new List<int[]>();
+            matrix.Add(new int[] { 0, 1 });
+            matrix.Add(new int[] { 1, 0 });
+            matrix.Add(new int[] { 0, -1 });
+            matrix.Add(new int[] { -1, 0 });
+            return matrix;
+        }
+
+
+ 
         
+
         //Piece in the way 
-            //Queen,Bishop,Rook,Pawn
-            
-            // Two ideas to solve this : Loop over every primary move 
+        //Queen,Bishop,Rook,Pawn
+
+        // Two ideas to solve this : Loop over every primary move 
 
         //King Check
         //King Checked

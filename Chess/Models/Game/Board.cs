@@ -2,48 +2,52 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
+using Chess.Models.Pieces;
+
 
 namespace Chess.Models.Game
 {
-    class Board
+    public class Board
     {
-        public List<int[]> allPieces = new List<int[]>();
-
+        
+        
+        public List<Piece> allPiecesObjects = new List<Piece>();
+        public static Board board = new Board();
         public Board()
         {
-            Console.WriteLine("boardIntiated");
-            allPieces.Add(new int[]{ 1, 1, 4, 1, 1});
-            allPieces.Add(new int[]{ 2, 1, 3, 1, 2});
-            allPieces.Add(new int[]{ 3, 1, 2, 1, 3});
-            allPieces.Add(new int[]{ 4, 1, 5, 1, 4});
-            allPieces.Add(new int[]{ 5, 1, 0, 1, 5});
-            allPieces.Add(new int[]{ 6, 1, 2, 1, 6});
-            allPieces.Add(new int[]{ 7, 1, 3, 1, 7});
-            allPieces.Add(new int[]{ 8, 1, 4, 1, 8});
-            allPieces.Add(new int[]{ 1, 2, 1, 1, 9});
-            allPieces.Add(new int[]{ 2, 2, 1, 1, 10});
-            allPieces.Add(new int[]{ 3, 2, 1, 1, 11});
-            allPieces.Add(new int[]{ 4, 2, 1, 1, 12});
-            allPieces.Add(new int[]{ 5, 2, 1, 1, 13});
-            allPieces.Add(new int[]{ 6, 2, 1, 1, 14});
-            allPieces.Add(new int[]{ 7, 2, 1, 1, 15});
-            allPieces.Add(new int[]{ 8, 2, 1, 1, 16});
-            allPieces.Add(new int[]{ 1, 7, 1, 0, 17});
-            allPieces.Add(new int[]{ 2, 7, 1, 0, 18});
-            allPieces.Add(new int[]{ 3, 7, 1, 0, 19});
-            allPieces.Add(new int[]{ 4, 7, 1, 0, 20});
-            allPieces.Add(new int[]{ 5, 7, 1, 0, 21});
-            allPieces.Add(new int[]{ 6, 7, 1, 0, 22});
-            allPieces.Add(new int[]{ 7, 7, 1, 0, 23});
-            allPieces.Add(new int[]{ 8, 7, 1, 0, 24});
-            allPieces.Add(new int[]{ 1, 8, 4, 0, 25});
-            allPieces.Add(new int[]{ 2, 8, 3, 0, 26});
-            allPieces.Add(new int[]{ 3, 8, 2, 0, 27});
-            allPieces.Add(new int[]{ 4, 8, 5, 0, 28});
-            allPieces.Add(new int[]{ 5, 8, 0, 0, 29});
-            allPieces.Add(new int[]{ 6, 8, 2, 0, 30});
-            allPieces.Add(new int[]{ 7, 8, 3, 0, 31});
-            allPieces.Add(new int[]{ 8, 8, 4, 0, 32});
+
+            allPiecesObjects.Add(new Rook ( 1, 1, "Black" ));
+            allPiecesObjects.Add(new Knight ( 1, 2, "Black"));
+            allPiecesObjects.Add(new Bishop ( 1, 3, "Black"));
+            allPiecesObjects.Add(new Queen ( 1, 5, "Black"));
+            allPiecesObjects.Add(new King ( 1, 4, "Black"));
+            allPiecesObjects.Add(new Bishop ( 1, 6, "Black"));
+            allPiecesObjects.Add(new Knight ( 1, 7, "Black"));
+            allPiecesObjects.Add(new Rook ( 1, 8, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 1, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 2, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 3, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 4, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 5, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 6, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 7, "Black"));
+            allPiecesObjects.Add(new Pawn ( 2, 8, "Black"));
+            allPiecesObjects.Add(new Pawn ( 7, 1, "White" ));
+            allPiecesObjects.Add(new Pawn ( 7, 2, "White"));
+            allPiecesObjects.Add(new Pawn ( 7, 3, "White"));
+            allPiecesObjects.Add(new Pawn ( 7, 4, "White"));
+            allPiecesObjects.Add(new Pawn ( 7, 5, "White"));
+            allPiecesObjects.Add(new Pawn ( 7, 6, "White"));
+            allPiecesObjects.Add(new Pawn ( 7, 7, "White"));
+            allPiecesObjects.Add(new Pawn ( 7, 8, "White"));
+            allPiecesObjects.Add(new Rook ( 8, 1, "White"));
+            allPiecesObjects.Add(new Knight ( 8, 2, "White"));
+            allPiecesObjects.Add(new Bishop ( 8, 3, "White"));
+            allPiecesObjects.Add(new Queen ( 8, 5, "White"));
+            allPiecesObjects.Add(new King ( 8, 4, "White"));
+            allPiecesObjects.Add(new Bishop ( 8, 6, "White"));
+            allPiecesObjects.Add(new Knight ( 8, 7, "White"));
+            allPiecesObjects.Add(new Rook ( 8, 8, "White"));
 
         }
 
