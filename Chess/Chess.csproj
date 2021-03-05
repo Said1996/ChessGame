@@ -36,7 +36,9 @@
     <Resource Include="Resources\BlackPawn.png" />
     <Resource Include="Resources\BlackQueen.png" />
     <Resource Include="Resources\BlackRook.png" />
-    <Resource Include="Resources\CanMove.png" />
+    <Resource Include="Resources\CanMove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\ChessBoard.png" />
     <Resource Include="Resources\Circle.png" />
     <Resource Include="Resources\WhiteBishop.png" />

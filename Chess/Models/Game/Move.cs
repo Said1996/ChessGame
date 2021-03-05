@@ -28,7 +28,7 @@ namespace Chess.Models.Game
         
 
 
-        static public void DoMove(int[] moveFrom, int[] moveTo)
+        public static void DoMove(int[] moveFrom, int[] moveTo)
         {
             
 

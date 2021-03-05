@@ -246,6 +246,6 @@
             
             
         </Grid>
-        <Label x:Name="aLabel" Content="No" FontSize="30" Grid.Row="1" Grid.Column="1"/>
+       
     </Grid>
 </Window>

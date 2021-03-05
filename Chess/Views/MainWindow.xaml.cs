@@ -77,7 +77,7 @@ namespace Chess
                 Button button = new Button();               
                 Grid.SetRow(button, switcher[item[0]]);
                 Grid.SetColumn(button, item[1]);
-                ImageBrush imageBrush = new ImageBrush(new BitmapImage(new Uri("D://Said/CS//Coding//Projects//InProgress//ChessGame//Chess//Resources//CanMove.png")));
+                ImageBrush imageBrush = new ImageBrush(new BitmapImage(new Uri("..\\..\\..\\Resources\\canMove.png" , UriKind.Relative)));
                 button.Background = imageBrush;
                 button.Click += MovePiece;  
                 tempButtons.Add(button);

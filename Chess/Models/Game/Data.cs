@@ -18,6 +18,7 @@ namespace Chess.Models.Game
             PinnedPieces();
             PositionsToBlockCheck();
         }
+
         public static void PinnedPieces()
         {
             _pinnedPieces.Clear();
@@ -33,7 +34,6 @@ namespace Chess.Models.Game
                         var king = Board.board.allPiecesObjects.Find(x => x.Position.SequenceEqual(list[1]));
                         if (pinnedOne.Side != piece.Side && king.Side != piece.Side && king is King )
                         {   
-                            
                             _pinnedPieces.Add(pinnedOne, piece._naturalMoves[i].Prepend(piece.Position).ToList());
                         }
                     }
